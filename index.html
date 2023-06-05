@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Word Character counter</title>
+        <link rel="stylesheet" href="c1.css">
+    </head>
+    <body>
+        <center>
+            <h1>CW counter</h1>
+            <form>
+                <textarea placeholder="Enter text here" id="ta" cols="30" rows="5"></textarea>
+            </form>
+            <h1 id ="msg"></h1>
+            <script>
+                let ta = document.getElementById("ta");
+                let msg = document.getElementById("msg");
+                ta.addEventListener("input", function(){
+
+                    let t = ta.value.trim();
+
+                    let cc = t.split("").join("").length;
+                    let wc = 0;
+
+                    if(cc == 0){
+                        wc = 0;
+                    }
+                    else {
+                        wc = t.split(" ").length;
+                    }
+                    let m = "Total Characters = " + cc + " Total Words = " + wc;
+                    msg.innerHTML = m;
+                })
+            </script>
+        </center>
+    </body>
+</html>
